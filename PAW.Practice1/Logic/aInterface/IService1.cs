@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 
-namespace PAW.Practice1.Logic.aService
+namespace PAW.Practice1
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
     [ServiceContract]
@@ -24,35 +24,38 @@ namespace PAW.Practice1.Logic.aService
         double TriangleArea(double s1, double s2, double s3);
 
 
+        [OperationContract]
+        double SquarePerimeter(double s1);
 
 
+        [OperationContract]
+        double SquareArea(double s1);
 
-     
-        // COMPOSITE STUFF 
-      
+
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
-        // Utilice un contrato de datos, como se ilustra en el ejemplo siguiente, para agregar tipos compuestos a las operaciones de servicio.
-        [DataContract]
-        public class CompositeType
+
+        // COMPOSITE STUFF 
+    }
+
+    public class CompositeType
+    {
+        bool boolValue = true;
+        string stringValue = "Hello ";
+
+        [DataMember]
+        public bool BoolValue
         {
-            bool boolValue = true;
-            string stringValue = "Hello ";
+            get { return boolValue; }
+            set { boolValue = value; }
+        }
 
-            [DataMember]
-            public bool BoolValue
-            {
-                get { return boolValue; }
-                set { boolValue = value; }
-            }
-
-            [DataMember]
-            public string StringValue
-            {
-                get { return stringValue; }
-                set { stringValue = value; }
-            }
+        [DataMember]
+        public string StringValue
+        {
+            get { return stringValue; }
+            set { stringValue = value; }
         }
     }
 }

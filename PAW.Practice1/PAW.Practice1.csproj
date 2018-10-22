@@ -67,12 +67,15 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Logic\bInterface\IService1.cs" />
+    <Compile Include="Logic\aInterface\IService1.cs" />
     <Compile Include="Logic\aService\Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>
+    <Compile Include="Logic\cSpecification\SquareOps.cs" />
     <Compile Include="Logic\cSpecification\TriangleOps.cs" />
+    <Compile Include="Logic\dAction\SquareAxion.cs" />
     <Compile Include="Logic\dAction\TriangleAxion.cs" />
+    <Compile Include="Logic\eValidations\SquareVal.cs" />
     <Compile Include="Logic\eValidations\TriangleVal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
